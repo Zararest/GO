@@ -52,7 +52,7 @@ calculator/
 
 ```
 
-Import means `import file` and after that you can use modules from it:
+Import means `import directory` and after that you can use modules from it:
 
 ```go
 package main
@@ -63,6 +63,8 @@ func main() {
 	gui.Run()
 }
 ```
+
+In Go, a directory is considered a single compilation unit, and all files within that directory are part of the same package.
 
 ## External modules
 There is a CLI for package installation.
@@ -95,3 +97,37 @@ go build -o project ../cmd/main.go #builds go file
 - panic() - function for abortion
 - each variable should be used (even err values!)
 - `defer` - useful keyword which calls function after it after the current function is executed
+- you can associate function with structure:
+```go
+struct Logger {
+  int Level
+}
+
+func (log Logger) method (msg string) int {
+
+}
+```
+- you can't access a packege 1 that has been imported to a package 2 from a package 3
+- slice == std::vector:
+```go
+func createSlice() []int {
+    // Creating and returning a slice 
+    //  make([]int, 0) - empty one
+    return []int{1, 2, 3, 4, 5}
+}
+```
+
+### Whole process
+```
+go mod init calculator
+```
+
+```
+mkdir cmd
+mkdir pkg
+mkdir build
+```
+
+```
+go build ./cmd/main.go
+```
