@@ -39,7 +39,7 @@ func getToken(str string, log logger.Logger) token {
 
 func tokenize(str string, log logger.Logger) []token {
 	log.Print("Tokenizing starts" /*level*/, 1)
-	re := regexp.MustCompilePOSIX("[0-9]+|[+,-,/,*]|[(,)]")
+	re := regexp.MustCompilePOSIX("(([0-9]*[.])?[0-9]+)|[-,+,/,*]|[(,)]")
 	words := re.FindAllString(str /*n*/, -1)
 	result := make([]token, 0)
 	for _, word := range words {
@@ -61,7 +61,7 @@ func parseVal(state *parsingState, log logger.Logger) (float64, error) {
 }
 
 func parseExpr(state *parsingState, log logger.Logger) (float64, error) {
-	log.Print("parsing expression" /*level*/, 2)
+	log.Print("parsing expression on token: "+state.getToken().Str /*level*/, 2)
 	if state.getToken().Str != "(" {
 		return parseVal(state, log)
 	}
@@ -139,6 +139,7 @@ func parseSub(state *parsingState, log logger.Logger) (float64, error) {
 	}
 	ans := lhs
 
+	log.Print("got sub" /*level*/, 2)
 	for !state.isEndOfTokens() {
 		if state.getToken().Str != "-" {
 			return ans, nil
