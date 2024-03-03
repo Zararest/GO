@@ -108,7 +108,7 @@ func (log Logger) method (msg string) int {
 }
 ```
 - you can't access a packege 1 that has been imported to a package 2 from a package 3
-- slice == std::vector:
+- slice == std::vector
 ```go
 func createSlice() []int {
     // Creating and returning a slice 

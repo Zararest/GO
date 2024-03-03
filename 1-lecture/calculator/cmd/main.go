@@ -1,10 +1,21 @@
 package main
 
 import (
-	"calculator/pkg/parser"
+	"bufio"
 	"calculator/pkg/logger"
+	"calculator/pkg/parser"
+	"flag"
+	"fmt"
+	"os"
 )
 
 func main() {
-	parser.Parse("hello", logger.Logger{Level:1})
+	var logLevel uint
+	flag.UintVar(&logLevel, "log-levle", 0, "The level of logging details")
+	reader := bufio.NewReader(os.Stdin)
+
+	fmt.Println("Enter expression:")
+	expression, _ := reader.ReadString('\n')
+	ans := parser.Parse(expression, logger.Logger{Level: logLevel})
+	fmt.Println("Answer: ", ans)
 }
