@@ -11,7 +11,8 @@ import (
 
 func main() {
 	var logLevel uint
-	flag.UintVar(&logLevel, "log-levle", 0, "The level of logging details")
+	flag.UintVar(&logLevel, "log-level", 0, "The level of logging details")
+	flag.Parse()
 	reader := bufio.NewReader(os.Stdin)
 
 	fmt.Println("Enter expression:")
