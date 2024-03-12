@@ -22,7 +22,7 @@ func (state parsingState) isEndOfTokens() bool {
 	return state.Position >= len(state.Tokens)
 }
 
-func (state parsingState) getToken() token {
+func (state parsingState) getToken() token { // FIXME add checker
 	return state.Tokens[state.Position]
 }
 
@@ -39,7 +39,7 @@ func getToken(str string, log logger.Logger) token {
 
 func tokenize(str string, log logger.Logger) []token {
 	log.Print("Tokenizing starts" /*level*/, 1)
-	re := regexp.MustCompilePOSIX("(([0-9]*[.])?[0-9]+)|[-,+,/,*]|[(,)]")
+	re := regexp.MustCompilePOSIX("(([0-9]*[.])?[0-9]+)|[-,+,/,*]|[(,)]") // FIXME
 	words := re.FindAllString(str /*n*/, -1)
 	result := make([]token, 0)
 	for _, word := range words {
