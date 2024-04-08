@@ -6,7 +6,7 @@ import (
 
 	"gopkg.in/yaml.v2"
 
-	"currency-parser/pkg/xml"
+	"currency-parser/pkg/currency"
 )
 
 type _YAMLStructure struct {
@@ -32,20 +32,32 @@ func parseYamlFile(fileName string) (string, string) {
 func main() {
 	// Define flags
 	var configFile string
+	var dumpParsed bool
 
 	// Parse flags
 	flag.StringVar(&configFile, "config", "",
 		"File with files to parse")
+	flag.BoolVar(&dumpParsed, "dump-input", false,
+		"Dump all currencies")
 	flag.Parse()
 
 	if configFile == "" {
 		panic("config file hasn't been provided")
 	}
 
-	inputFile, _ := parseYamlFile(configFile)
-	currencyRepresentation, err := xmlParser.DecodeFile(inputFile)
+	inputFile, outputFile := parseYamlFile(configFile)
+	currencyRepresentation, err := currency.DecodeFile(inputFile)
 	if err != nil {
-		panic("can't decode file:" + err.Error())
+		panic("can't decode file: " + err.Error())
 	}
-	xmlParser.DumpCurrency(currencyRepresentation)
+
+	if dumpParsed {
+		currency.Dump(currencyRepresentation)
+	}
+
+	currency.SortByValue(currencyRepresentation)
+	err = currency.DumpToJson(currencyRepresentation, outputFile)
+	if err != nil {
+		panic("can't dump info into json: " + err.Error())
+	}
 }

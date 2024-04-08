@@ -13,3 +13,7 @@ type _YAMLStructure struct {
 	OutFile   string `yaml:"output-file"`
 }
 ```
+- In order to create one representation fro manother you should use:
+```go
+json.Marshal(person)
+```
