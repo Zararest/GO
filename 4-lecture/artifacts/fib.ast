@@ -1,0 +1,627 @@
+after walk expr
+.   NAME-fib.fib esc(no) Class:PAUTO Offset:0 OnStack Used SLICE-[]int tc(1) # fib.go:4:2
+after walk expr
+.   NAME-runtime.makeslice Class:PFUNC Offset:0 Used FUNC-func(*byte, int, int) unsafe.Pointer tc(1)
+after walk expr
+.   LINKSYMOFFSET-type:int Offset:0 uint8 tc(1)
+after walk expr
+.   ADDR PTR-*uint8 tc(1) # fib.go:4:13
+.   .   LINKSYMOFFSET-type:int Offset:0 uint8 tc(1)
+after walk expr
+.   NAME-fib.n esc(no) Class:PPARAM Offset:0 OnStack Used int tc(1) # fib.go:3:16
+after walk expr
+.   NAME-fib.n esc(no) Class:PPARAM Offset:0 OnStack Used int tc(1) # fib.go:3:16
+after walk expr
+.   CALLFUNC Walked UNSAFEPTR-unsafe.Pointer tc(1) # fib.go:4:13
+.   CALLFUNC-Fun
+.   .   NAME-runtime.makeslice Class:PFUNC Offset:0 Used FUNC-func(*byte, int, int) unsafe.Pointer tc(1)
+.   CALLFUNC-Args
+.   .   ADDR PTR-*uint8 tc(1) # fib.go:4:13
+.   .   .   LINKSYMOFFSET-type:int Offset:0 uint8 tc(1)
+.   .   NAME-fib.n esc(no) Class:PPARAM Offset:0 OnStack Used int tc(1) # fib.go:3:16
+.   .   NAME-fib.n esc(no) Class:PPARAM Offset:0 OnStack Used int tc(1) # fib.go:3:16
+after walk expr
+.   CALLFUNC NonNil Walked UNSAFEPTR-unsafe.Pointer tc(1) # fib.go:4:13
+.   CALLFUNC-Fun
+.   .   NAME-runtime.makeslice Class:PFUNC Offset:0 Used FUNC-func(*byte, int, int) unsafe.Pointer tc(1)
+.   CALLFUNC-Args
+.   .   ADDR PTR-*uint8 tc(1) # fib.go:4:13
+.   .   .   LINKSYMOFFSET-type:int Offset:0 uint8 tc(1)
+.   .   NAME-fib.n esc(no) Class:PPARAM Offset:0 OnStack Used int tc(1) # fib.go:3:16
+.   .   NAME-fib.n esc(no) Class:PPARAM Offset:0 OnStack Used int tc(1) # fib.go:3:16
+after walk expr
+.   NAME-fib.n esc(no) Class:PPARAM Offset:0 OnStack Used int tc(1) # fib.go:3:16
+after walk expr
+.   NAME-fib.n esc(no) Class:PPARAM Offset:0 OnStack Used int tc(1) # fib.go:3:16
+after walk expr
+.   SLICEHEADER SLICE-[]int tc(1) # fib.go:4:13
+.   SLICEHEADER-Ptr
+.   .   CALLFUNC NonNil Walked UNSAFEPTR-unsafe.Pointer tc(1) # fib.go:4:13
+.   .   CALLFUNC-Fun
+.   .   .   NAME-runtime.makeslice Class:PFUNC Offset:0 Used FUNC-func(*byte, int, int) unsafe.Pointer tc(1)
+.   .   CALLFUNC-Args
+.   .   .   ADDR PTR-*uint8 tc(1) # fib.go:4:13
+.   .   .   .   LINKSYMOFFSET-type:int Offset:0 uint8 tc(1)
+.   .   .   NAME-fib.n esc(no) Class:PPARAM Offset:0 OnStack Used int tc(1) # fib.go:3:16
+.   .   .   NAME-fib.n esc(no) Class:PPARAM Offset:0 OnStack Used int tc(1) # fib.go:3:16
+.   SLICEHEADER-Len
+.   .   NAME-fib.n esc(no) Class:PPARAM Offset:0 OnStack Used int tc(1) # fib.go:3:16
+.   SLICEHEADER-Cap
+.   .   NAME-fib.n esc(no) Class:PPARAM Offset:0 OnStack Used int tc(1) # fib.go:3:16
+after walk expr
+.   SLICEHEADER SLICE-[]int tc(1) # fib.go:4:13
+.   SLICEHEADER-Ptr
+.   .   CALLFUNC NonNil Walked UNSAFEPTR-unsafe.Pointer tc(1) # fib.go:4:13
+.   .   CALLFUNC-Fun
+.   .   .   NAME-runtime.makeslice Class:PFUNC Offset:0 Used FUNC-func(*byte, int, int) unsafe.Pointer tc(1)
+.   .   CALLFUNC-Args
+.   .   .   ADDR PTR-*uint8 tc(1) # fib.go:4:13
+.   .   .   .   LINKSYMOFFSET-type:int Offset:0 uint8 tc(1)
+.   .   .   NAME-fib.n esc(no) Class:PPARAM Offset:0 OnStack Used int tc(1) # fib.go:3:16
+.   .   .   NAME-fib.n esc(no) Class:PPARAM Offset:0 OnStack Used int tc(1) # fib.go:3:16
+.   SLICEHEADER-Len
+.   .   NAME-fib.n esc(no) Class:PPARAM Offset:0 OnStack Used int tc(1) # fib.go:3:16
+.   SLICEHEADER-Cap
+.   .   NAME-fib.n esc(no) Class:PPARAM Offset:0 OnStack Used int tc(1) # fib.go:3:16
+after walk expr
+.   AS Def tc(1) # fib.go:4:6
+.   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 OnStack Used SLICE-[]int tc(1) # fib.go:4:2
+.   .   SLICEHEADER SLICE-[]int tc(1) # fib.go:4:13
+.   .   SLICEHEADER-Ptr
+.   .   .   CALLFUNC NonNil Walked UNSAFEPTR-unsafe.Pointer tc(1) # fib.go:4:13
+.   .   .   CALLFUNC-Fun
+.   .   .   .   NAME-runtime.makeslice Class:PFUNC Offset:0 Used FUNC-func(*byte, int, int) unsafe.Pointer tc(1)
+.   .   .   CALLFUNC-Args
+.   .   .   .   ADDR PTR-*uint8 tc(1) # fib.go:4:13
+.   .   .   .   .   LINKSYMOFFSET-type:int Offset:0 uint8 tc(1)
+.   .   .   .   NAME-fib.n esc(no) Class:PPARAM Offset:0 OnStack Used int tc(1) # fib.go:3:16
+.   .   .   .   NAME-fib.n esc(no) Class:PPARAM Offset:0 OnStack Used int tc(1) # fib.go:3:16
+.   .   SLICEHEADER-Len
+.   .   .   NAME-fib.n esc(no) Class:PPARAM Offset:0 OnStack Used int tc(1) # fib.go:3:16
+.   .   SLICEHEADER-Cap
+.   .   .   NAME-fib.n esc(no) Class:PPARAM Offset:0 OnStack Used int tc(1) # fib.go:3:16
+after walk expr
+.   NAME-fib.fib esc(no) Class:PAUTO Offset:0 OnStack Used SLICE-[]int tc(1) # fib.go:4:2
+after walk expr
+.   LITERAL-0 int tc(1) # fib.go:5:6
+after walk expr
+.   INDEX int tc(1) # fib.go:5:5
+.   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 OnStack Used SLICE-[]int tc(1) # fib.go:4:2
+.   .   LITERAL-0 int tc(1) # fib.go:5:6
+after walk expr
+.   AS tc(1) # fib.go:5:17
+.   .   INDEX int tc(1) # fib.go:5:5
+.   .   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 OnStack Used SLICE-[]int tc(1) # fib.go:4:2
+.   .   .   LITERAL-0 int tc(1) # fib.go:5:6
+.   .   LITERAL-0 int tc(1) # fib.go:5:19
+after walk expr
+.   NAME-fib.fib esc(no) Class:PAUTO Offset:0 OnStack Used SLICE-[]int tc(1) # fib.go:4:2
+after walk expr
+.   LITERAL-1 int tc(1) # fib.go:5:14
+after walk expr
+.   INDEX int tc(1) # fib.go:5:13
+.   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 OnStack Used SLICE-[]int tc(1) # fib.go:4:2
+.   .   LITERAL-1 int tc(1) # fib.go:5:14
+after walk expr
+.   LITERAL-1 int tc(1) # fib.go:5:22
+after walk expr
+.   AS tc(1) # fib.go:5:17
+.   .   INDEX int tc(1) # fib.go:5:13
+.   .   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 OnStack Used SLICE-[]int tc(1) # fib.go:4:2
+.   .   .   LITERAL-1 int tc(1) # fib.go:5:14
+.   .   LITERAL-1 int tc(1) # fib.go:5:22
+after walk expr
+.   BLOCK # fib.go:5:17
+.   BLOCK-List
+.   .   AS tc(1) # fib.go:5:17
+.   .   .   INDEX int tc(1) # fib.go:5:5
+.   .   .   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 OnStack Used SLICE-[]int tc(1) # fib.go:4:2
+.   .   .   .   LITERAL-0 int tc(1) # fib.go:5:6
+.   .   .   LITERAL-0 int tc(1) # fib.go:5:19
+.   .   AS tc(1) # fib.go:5:17
+.   .   .   INDEX int tc(1) # fib.go:5:13
+.   .   .   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 OnStack Used SLICE-[]int tc(1) # fib.go:4:2
+.   .   .   .   LITERAL-1 int tc(1) # fib.go:5:14
+.   .   .   LITERAL-1 int tc(1) # fib.go:5:22
+after walk expr
+.   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:6:6
+after walk expr
+.   LITERAL-2 int tc(1) # fib.go:6:11
+after walk expr
+.   AS Def tc(1) # fib.go:6:8
+.   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:6:6
+.   .   LITERAL-2 int tc(1) # fib.go:6:11
+after walk expr
+.   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:6:6
+after walk expr
+.   NAME-fib.n esc(no) Class:PPARAM Offset:0 OnStack Used int tc(1) # fib.go:3:16
+after walk expr
+.   LT bool tc(1) # fib.go:6:16
+.   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:6:6
+.   .   NAME-fib.n esc(no) Class:PPARAM Offset:0 OnStack Used int tc(1) # fib.go:3:16
+after walk expr
+.   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:6:6
+after walk expr
+.   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:6:6
+after walk expr
+.   LITERAL-1 int tc(1) # fib.go:6:22
+after walk expr
+.   ADD int tc(1) # fib.go:6:22
+.   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:6:6
+.   .   LITERAL-1 int tc(1) # fib.go:6:22
+after walk expr
+.   AS tc(1) # fib.go:6:22
+.   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:6:6
+.   .   ADD int tc(1) # fib.go:6:22
+.   .   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:6:6
+.   .   .   LITERAL-1 int tc(1) # fib.go:6:22
+after walk expr
+.   NAME-fib.fib esc(no) Class:PAUTO Offset:0 OnStack Used SLICE-[]int tc(1) # fib.go:4:2
+after walk expr
+.   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:6:6
+after walk expr
+.   INDEX int tc(1) # fib.go:7:6
+.   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 OnStack Used SLICE-[]int tc(1) # fib.go:4:2
+.   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:6:6
+after walk expr
+.   NAME-fib.fib esc(no) Class:PAUTO Offset:0 OnStack Used SLICE-[]int tc(1) # fib.go:4:2
+after walk expr
+.   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:6:6
+after walk expr
+.   LITERAL-1 int tc(1) # fib.go:7:18
+after walk expr
+.   SUB int tc(1) # fib.go:7:17
+.   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:6:6
+.   .   LITERAL-1 int tc(1) # fib.go:7:18
+after walk expr
+.   INDEX int tc(1) # fib.go:7:15
+.   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 OnStack Used SLICE-[]int tc(1) # fib.go:4:2
+.   .   SUB int tc(1) # fib.go:7:17
+.   .   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:6:6
+.   .   .   LITERAL-1 int tc(1) # fib.go:7:18
+after walk expr
+.   NAME-fib.fib esc(no) Class:PAUTO Offset:0 OnStack Used SLICE-[]int tc(1) # fib.go:4:2
+after walk expr
+.   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:6:6
+after walk expr
+.   LITERAL-2 int tc(1) # fib.go:7:29
+after walk expr
+.   SUB int tc(1) # fib.go:7:28
+.   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:6:6
+.   .   LITERAL-2 int tc(1) # fib.go:7:29
+after walk expr
+.   INDEX int tc(1) # fib.go:7:26
+.   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 OnStack Used SLICE-[]int tc(1) # fib.go:4:2
+.   .   SUB int tc(1) # fib.go:7:28
+.   .   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:6:6
+.   .   .   LITERAL-2 int tc(1) # fib.go:7:29
+after walk expr
+.   ADD int tc(1) # fib.go:7:21
+.   .   INDEX int tc(1) # fib.go:7:15
+.   .   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 OnStack Used SLICE-[]int tc(1) # fib.go:4:2
+.   .   .   SUB int tc(1) # fib.go:7:17
+.   .   .   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:6:6
+.   .   .   .   LITERAL-1 int tc(1) # fib.go:7:18
+.   .   INDEX int tc(1) # fib.go:7:26
+.   .   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 OnStack Used SLICE-[]int tc(1) # fib.go:4:2
+.   .   .   SUB int tc(1) # fib.go:7:28
+.   .   .   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:6:6
+.   .   .   .   LITERAL-2 int tc(1) # fib.go:7:29
+after walk expr
+.   AS tc(1) # fib.go:7:10
+.   .   INDEX int tc(1) # fib.go:7:6
+.   .   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 OnStack Used SLICE-[]int tc(1) # fib.go:4:2
+.   .   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:6:6
+.   .   ADD int tc(1) # fib.go:7:21
+.   .   .   INDEX int tc(1) # fib.go:7:15
+.   .   .   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 OnStack Used SLICE-[]int tc(1) # fib.go:4:2
+.   .   .   .   SUB int tc(1) # fib.go:7:17
+.   .   .   .   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:6:6
+.   .   .   .   .   LITERAL-1 int tc(1) # fib.go:7:18
+.   .   .   INDEX int tc(1) # fib.go:7:26
+.   .   .   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 OnStack Used SLICE-[]int tc(1) # fib.go:4:2
+.   .   .   .   SUB int tc(1) # fib.go:7:28
+.   .   .   .   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:6:6
+.   .   .   .   .   LITERAL-2 int tc(1) # fib.go:7:29
+after walk expr
+.   NAME-fib.~r0 esc(no) Class:PPARAMOUT Offset:0 OnStack SLICE-[]int tc(1) # fib.go:3:23
+after walk expr
+.   NAME-fib.fib esc(no) Class:PAUTO Offset:0 OnStack Used SLICE-[]int tc(1) # fib.go:4:2
+after walk expr
+.   AS tc(1) # fib.go:9:2
+.   .   NAME-fib.~r0 esc(no) Class:PPARAMOUT Offset:0 OnStack SLICE-[]int tc(1) # fib.go:3:23
+.   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 OnStack Used SLICE-[]int tc(1) # fib.go:4:2
+after walk expr
+.   NAME-fib.n esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:13:2
+after walk expr
+.   LITERAL-10 int tc(1) # fib.go:13:7
+after walk expr
+.   AS Def tc(1) # fib.go:13:4
+.   .   NAME-fib.n esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:13:2
+.   .   LITERAL-10 int tc(1) # fib.go:13:7
+after walk expr
+.   NAME-fib.n esc(no) Class:PAUTO Offset:0 InlFormal OnStack Used int tc(1) # fib.go:14:18 fib.go:3:16
+after walk expr
+.   NAME-fib.n esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:13:2
+after walk expr
+.   AS tc(1) # fib.go:14:18
+.   .   NAME-fib.n esc(no) Class:PAUTO Offset:0 InlFormal OnStack Used int tc(1) # fib.go:14:18 fib.go:3:16
+.   .   NAME-fib.n esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:13:2
+after walk expr
+.   BLOCK # fib.go:14:18
+.   BLOCK-List
+.   .   AS tc(1) # fib.go:14:18
+.   .   .   NAME-fib.n esc(no) Class:PAUTO Offset:0 InlFormal OnStack Used int tc(1) # fib.go:14:18 fib.go:3:16
+.   .   .   NAME-fib.n esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:13:2
+after walk expr
+.   NAME-fib.fib esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used SLICE-[]int tc(1) # fib.go:14:18 fib.go:4:2
+after walk expr
+.   NAME-runtime.makeslice Class:PFUNC Offset:0 Used FUNC-func(*byte, int, int) unsafe.Pointer tc(1)
+after walk expr
+.   LINKSYMOFFSET-type:int Offset:0 uint8 tc(1)
+after walk expr
+.   ADDR PTR-*uint8 tc(1) # fib.go:14:18 fib.go:4:13
+.   .   LINKSYMOFFSET-type:int Offset:0 uint8 tc(1)
+after walk expr
+.   NAME-fib.n esc(no) Class:PAUTO Offset:0 InlFormal OnStack Used int tc(1) # fib.go:14:18 fib.go:3:16
+after walk expr
+.   NAME-fib.n esc(no) Class:PAUTO Offset:0 InlFormal OnStack Used int tc(1) # fib.go:14:18 fib.go:3:16
+after walk expr
+.   CALLFUNC Walked UNSAFEPTR-unsafe.Pointer tc(1) # fib.go:14:18 fib.go:4:13
+.   CALLFUNC-Fun
+.   .   NAME-runtime.makeslice Class:PFUNC Offset:0 Used FUNC-func(*byte, int, int) unsafe.Pointer tc(1)
+.   CALLFUNC-Args
+.   .   ADDR PTR-*uint8 tc(1) # fib.go:14:18 fib.go:4:13
+.   .   .   LINKSYMOFFSET-type:int Offset:0 uint8 tc(1)
+.   .   NAME-fib.n esc(no) Class:PAUTO Offset:0 InlFormal OnStack Used int tc(1) # fib.go:14:18 fib.go:3:16
+.   .   NAME-fib.n esc(no) Class:PAUTO Offset:0 InlFormal OnStack Used int tc(1) # fib.go:14:18 fib.go:3:16
+after walk expr
+.   CALLFUNC NonNil Walked UNSAFEPTR-unsafe.Pointer tc(1) # fib.go:14:18 fib.go:4:13
+.   CALLFUNC-Fun
+.   .   NAME-runtime.makeslice Class:PFUNC Offset:0 Used FUNC-func(*byte, int, int) unsafe.Pointer tc(1)
+.   CALLFUNC-Args
+.   .   ADDR PTR-*uint8 tc(1) # fib.go:14:18 fib.go:4:13
+.   .   .   LINKSYMOFFSET-type:int Offset:0 uint8 tc(1)
+.   .   NAME-fib.n esc(no) Class:PAUTO Offset:0 InlFormal OnStack Used int tc(1) # fib.go:14:18 fib.go:3:16
+.   .   NAME-fib.n esc(no) Class:PAUTO Offset:0 InlFormal OnStack Used int tc(1) # fib.go:14:18 fib.go:3:16
+after walk expr
+.   NAME-fib.n esc(no) Class:PAUTO Offset:0 InlFormal OnStack Used int tc(1) # fib.go:14:18 fib.go:3:16
+after walk expr
+.   NAME-fib.n esc(no) Class:PAUTO Offset:0 InlFormal OnStack Used int tc(1) # fib.go:14:18 fib.go:3:16
+after walk expr
+.   SLICEHEADER SLICE-[]int tc(1) # fib.go:14:18 fib.go:4:13
+.   SLICEHEADER-Ptr
+.   .   CALLFUNC NonNil Walked UNSAFEPTR-unsafe.Pointer tc(1) # fib.go:14:18 fib.go:4:13
+.   .   CALLFUNC-Fun
+.   .   .   NAME-runtime.makeslice Class:PFUNC Offset:0 Used FUNC-func(*byte, int, int) unsafe.Pointer tc(1)
+.   .   CALLFUNC-Args
+.   .   .   ADDR PTR-*uint8 tc(1) # fib.go:14:18 fib.go:4:13
+.   .   .   .   LINKSYMOFFSET-type:int Offset:0 uint8 tc(1)
+.   .   .   NAME-fib.n esc(no) Class:PAUTO Offset:0 InlFormal OnStack Used int tc(1) # fib.go:14:18 fib.go:3:16
+.   .   .   NAME-fib.n esc(no) Class:PAUTO Offset:0 InlFormal OnStack Used int tc(1) # fib.go:14:18 fib.go:3:16
+.   SLICEHEADER-Len
+.   .   NAME-fib.n esc(no) Class:PAUTO Offset:0 InlFormal OnStack Used int tc(1) # fib.go:14:18 fib.go:3:16
+.   SLICEHEADER-Cap
+.   .   NAME-fib.n esc(no) Class:PAUTO Offset:0 InlFormal OnStack Used int tc(1) # fib.go:14:18 fib.go:3:16
+after walk expr
+.   SLICEHEADER SLICE-[]int tc(1) # fib.go:14:18 fib.go:4:13
+.   SLICEHEADER-Ptr
+.   .   CALLFUNC NonNil Walked UNSAFEPTR-unsafe.Pointer tc(1) # fib.go:14:18 fib.go:4:13
+.   .   CALLFUNC-Fun
+.   .   .   NAME-runtime.makeslice Class:PFUNC Offset:0 Used FUNC-func(*byte, int, int) unsafe.Pointer tc(1)
+.   .   CALLFUNC-Args
+.   .   .   ADDR PTR-*uint8 tc(1) # fib.go:14:18 fib.go:4:13
+.   .   .   .   LINKSYMOFFSET-type:int Offset:0 uint8 tc(1)
+.   .   .   NAME-fib.n esc(no) Class:PAUTO Offset:0 InlFormal OnStack Used int tc(1) # fib.go:14:18 fib.go:3:16
+.   .   .   NAME-fib.n esc(no) Class:PAUTO Offset:0 InlFormal OnStack Used int tc(1) # fib.go:14:18 fib.go:3:16
+.   SLICEHEADER-Len
+.   .   NAME-fib.n esc(no) Class:PAUTO Offset:0 InlFormal OnStack Used int tc(1) # fib.go:14:18 fib.go:3:16
+.   SLICEHEADER-Cap
+.   .   NAME-fib.n esc(no) Class:PAUTO Offset:0 InlFormal OnStack Used int tc(1) # fib.go:14:18 fib.go:3:16
+after walk expr
+.   AS Def tc(1) # fib.go:14:18 fib.go:4:6
+.   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used SLICE-[]int tc(1) # fib.go:14:18 fib.go:4:2
+.   .   SLICEHEADER SLICE-[]int tc(1) # fib.go:14:18 fib.go:4:13
+.   .   SLICEHEADER-Ptr
+.   .   .   CALLFUNC NonNil Walked UNSAFEPTR-unsafe.Pointer tc(1) # fib.go:14:18 fib.go:4:13
+.   .   .   CALLFUNC-Fun
+.   .   .   .   NAME-runtime.makeslice Class:PFUNC Offset:0 Used FUNC-func(*byte, int, int) unsafe.Pointer tc(1)
+.   .   .   CALLFUNC-Args
+.   .   .   .   ADDR PTR-*uint8 tc(1) # fib.go:14:18 fib.go:4:13
+.   .   .   .   .   LINKSYMOFFSET-type:int Offset:0 uint8 tc(1)
+.   .   .   .   NAME-fib.n esc(no) Class:PAUTO Offset:0 InlFormal OnStack Used int tc(1) # fib.go:14:18 fib.go:3:16
+.   .   .   .   NAME-fib.n esc(no) Class:PAUTO Offset:0 InlFormal OnStack Used int tc(1) # fib.go:14:18 fib.go:3:16
+.   .   SLICEHEADER-Len
+.   .   .   NAME-fib.n esc(no) Class:PAUTO Offset:0 InlFormal OnStack Used int tc(1) # fib.go:14:18 fib.go:3:16
+.   .   SLICEHEADER-Cap
+.   .   .   NAME-fib.n esc(no) Class:PAUTO Offset:0 InlFormal OnStack Used int tc(1) # fib.go:14:18 fib.go:3:16
+after walk expr
+.   NAME-fib.fib esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used SLICE-[]int tc(1) # fib.go:14:18 fib.go:4:2
+after walk expr
+.   LITERAL-0 int tc(1) # fib.go:14:18 fib.go:5:6
+after walk expr
+.   INDEX int tc(1) # fib.go:14:18 fib.go:5:5
+.   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used SLICE-[]int tc(1) # fib.go:14:18 fib.go:4:2
+.   .   LITERAL-0 int tc(1) # fib.go:14:18 fib.go:5:6
+after walk expr
+.   AS tc(1) # fib.go:14:18 fib.go:5:17
+.   .   INDEX int tc(1) # fib.go:14:18 fib.go:5:5
+.   .   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used SLICE-[]int tc(1) # fib.go:14:18 fib.go:4:2
+.   .   .   LITERAL-0 int tc(1) # fib.go:14:18 fib.go:5:6
+.   .   LITERAL-0 int tc(1) # fib.go:14:18 fib.go:5:19
+after walk expr
+.   NAME-fib.fib esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used SLICE-[]int tc(1) # fib.go:14:18 fib.go:4:2
+after walk expr
+.   LITERAL-1 int tc(1) # fib.go:14:18 fib.go:5:14
+after walk expr
+.   INDEX int tc(1) # fib.go:14:18 fib.go:5:13
+.   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used SLICE-[]int tc(1) # fib.go:14:18 fib.go:4:2
+.   .   LITERAL-1 int tc(1) # fib.go:14:18 fib.go:5:14
+after walk expr
+.   LITERAL-1 int tc(1) # fib.go:14:18 fib.go:5:22
+after walk expr
+.   AS tc(1) # fib.go:14:18 fib.go:5:17
+.   .   INDEX int tc(1) # fib.go:14:18 fib.go:5:13
+.   .   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used SLICE-[]int tc(1) # fib.go:14:18 fib.go:4:2
+.   .   .   LITERAL-1 int tc(1) # fib.go:14:18 fib.go:5:14
+.   .   LITERAL-1 int tc(1) # fib.go:14:18 fib.go:5:22
+after walk expr
+.   BLOCK # fib.go:14:18 fib.go:5:17
+.   BLOCK-List
+.   .   AS tc(1) # fib.go:14:18 fib.go:5:17
+.   .   .   INDEX int tc(1) # fib.go:14:18 fib.go:5:5
+.   .   .   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used SLICE-[]int tc(1) # fib.go:14:18 fib.go:4:2
+.   .   .   .   LITERAL-0 int tc(1) # fib.go:14:18 fib.go:5:6
+.   .   .   LITERAL-0 int tc(1) # fib.go:14:18 fib.go:5:19
+.   .   AS tc(1) # fib.go:14:18 fib.go:5:17
+.   .   .   INDEX int tc(1) # fib.go:14:18 fib.go:5:13
+.   .   .   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used SLICE-[]int tc(1) # fib.go:14:18 fib.go:4:2
+.   .   .   .   LITERAL-1 int tc(1) # fib.go:14:18 fib.go:5:14
+.   .   .   LITERAL-1 int tc(1) # fib.go:14:18 fib.go:5:22
+after walk expr
+.   NAME-fib.i esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used int tc(1) # fib.go:14:18 fib.go:6:6
+after walk expr
+.   LITERAL-2 int tc(1) # fib.go:14:18 fib.go:6:11
+after walk expr
+.   AS Def tc(1) # fib.go:14:18 fib.go:6:8
+.   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used int tc(1) # fib.go:14:18 fib.go:6:6
+.   .   LITERAL-2 int tc(1) # fib.go:14:18 fib.go:6:11
+after walk expr
+.   NAME-fib.i esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used int tc(1) # fib.go:14:18 fib.go:6:6
+after walk expr
+.   NAME-fib.n esc(no) Class:PAUTO Offset:0 InlFormal OnStack Used int tc(1) # fib.go:14:18 fib.go:3:16
+after walk expr
+.   LT bool tc(1) # fib.go:14:18 fib.go:6:16
+.   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used int tc(1) # fib.go:14:18 fib.go:6:6
+.   .   NAME-fib.n esc(no) Class:PAUTO Offset:0 InlFormal OnStack Used int tc(1) # fib.go:14:18 fib.go:3:16
+after walk expr
+.   NAME-fib.i esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used int tc(1) # fib.go:14:18 fib.go:6:6
+after walk expr
+.   NAME-fib.i esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used int tc(1) # fib.go:14:18 fib.go:6:6
+after walk expr
+.   LITERAL-1 int tc(1) # fib.go:14:18 fib.go:6:22
+after walk expr
+.   ADD int tc(1) # fib.go:14:18 fib.go:6:22
+.   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used int tc(1) # fib.go:14:18 fib.go:6:6
+.   .   LITERAL-1 int tc(1) # fib.go:14:18 fib.go:6:22
+after walk expr
+.   AS tc(1) # fib.go:14:18 fib.go:6:22
+.   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used int tc(1) # fib.go:14:18 fib.go:6:6
+.   .   ADD int tc(1) # fib.go:14:18 fib.go:6:22
+.   .   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used int tc(1) # fib.go:14:18 fib.go:6:6
+.   .   .   LITERAL-1 int tc(1) # fib.go:14:18 fib.go:6:22
+after walk expr
+.   NAME-fib.fib esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used SLICE-[]int tc(1) # fib.go:14:18 fib.go:4:2
+after walk expr
+.   NAME-fib.i esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used int tc(1) # fib.go:14:18 fib.go:6:6
+after walk expr
+.   INDEX int tc(1) # fib.go:14:18 fib.go:7:6
+.   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used SLICE-[]int tc(1) # fib.go:14:18 fib.go:4:2
+.   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used int tc(1) # fib.go:14:18 fib.go:6:6
+after walk expr
+.   NAME-fib.fib esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used SLICE-[]int tc(1) # fib.go:14:18 fib.go:4:2
+after walk expr
+.   NAME-fib.i esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used int tc(1) # fib.go:14:18 fib.go:6:6
+after walk expr
+.   LITERAL-1 int tc(1) # fib.go:14:18 fib.go:7:18
+after walk expr
+.   SUB int tc(1) # fib.go:14:18 fib.go:7:17
+.   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used int tc(1) # fib.go:14:18 fib.go:6:6
+.   .   LITERAL-1 int tc(1) # fib.go:14:18 fib.go:7:18
+after walk expr
+.   INDEX int tc(1) # fib.go:14:18 fib.go:7:15
+.   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used SLICE-[]int tc(1) # fib.go:14:18 fib.go:4:2
+.   .   SUB int tc(1) # fib.go:14:18 fib.go:7:17
+.   .   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used int tc(1) # fib.go:14:18 fib.go:6:6
+.   .   .   LITERAL-1 int tc(1) # fib.go:14:18 fib.go:7:18
+after walk expr
+.   NAME-fib.fib esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used SLICE-[]int tc(1) # fib.go:14:18 fib.go:4:2
+after walk expr
+.   NAME-fib.i esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used int tc(1) # fib.go:14:18 fib.go:6:6
+after walk expr
+.   LITERAL-2 int tc(1) # fib.go:14:18 fib.go:7:29
+after walk expr
+.   SUB int tc(1) # fib.go:14:18 fib.go:7:28
+.   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used int tc(1) # fib.go:14:18 fib.go:6:6
+.   .   LITERAL-2 int tc(1) # fib.go:14:18 fib.go:7:29
+after walk expr
+.   INDEX int tc(1) # fib.go:14:18 fib.go:7:26
+.   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used SLICE-[]int tc(1) # fib.go:14:18 fib.go:4:2
+.   .   SUB int tc(1) # fib.go:14:18 fib.go:7:28
+.   .   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used int tc(1) # fib.go:14:18 fib.go:6:6
+.   .   .   LITERAL-2 int tc(1) # fib.go:14:18 fib.go:7:29
+after walk expr
+.   ADD int tc(1) # fib.go:14:18 fib.go:7:21
+.   .   INDEX int tc(1) # fib.go:14:18 fib.go:7:15
+.   .   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used SLICE-[]int tc(1) # fib.go:14:18 fib.go:4:2
+.   .   .   SUB int tc(1) # fib.go:14:18 fib.go:7:17
+.   .   .   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used int tc(1) # fib.go:14:18 fib.go:6:6
+.   .   .   .   LITERAL-1 int tc(1) # fib.go:14:18 fib.go:7:18
+.   .   INDEX int tc(1) # fib.go:14:18 fib.go:7:26
+.   .   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used SLICE-[]int tc(1) # fib.go:14:18 fib.go:4:2
+.   .   .   SUB int tc(1) # fib.go:14:18 fib.go:7:28
+.   .   .   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used int tc(1) # fib.go:14:18 fib.go:6:6
+.   .   .   .   LITERAL-2 int tc(1) # fib.go:14:18 fib.go:7:29
+after walk expr
+.   AS tc(1) # fib.go:14:18 fib.go:7:10
+.   .   INDEX int tc(1) # fib.go:14:18 fib.go:7:6
+.   .   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used SLICE-[]int tc(1) # fib.go:14:18 fib.go:4:2
+.   .   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used int tc(1) # fib.go:14:18 fib.go:6:6
+.   .   ADD int tc(1) # fib.go:14:18 fib.go:7:21
+.   .   .   INDEX int tc(1) # fib.go:14:18 fib.go:7:15
+.   .   .   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used SLICE-[]int tc(1) # fib.go:14:18 fib.go:4:2
+.   .   .   .   SUB int tc(1) # fib.go:14:18 fib.go:7:17
+.   .   .   .   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used int tc(1) # fib.go:14:18 fib.go:6:6
+.   .   .   .   .   LITERAL-1 int tc(1) # fib.go:14:18 fib.go:7:18
+.   .   .   INDEX int tc(1) # fib.go:14:18 fib.go:7:26
+.   .   .   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used SLICE-[]int tc(1) # fib.go:14:18 fib.go:4:2
+.   .   .   .   SUB int tc(1) # fib.go:14:18 fib.go:7:28
+.   .   .   .   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used int tc(1) # fib.go:14:18 fib.go:6:6
+.   .   .   .   .   LITERAL-2 int tc(1) # fib.go:14:18 fib.go:7:29
+after walk expr
+.   NAME-fib.~r0 esc(no) Class:PAUTO Offset:0 InlFormal OnStack SLICE-[]int tc(1) # fib.go:14:18 fib.go:3:23
+after walk expr
+.   NAME-fib.fib esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used SLICE-[]int tc(1) # fib.go:14:18 fib.go:4:2
+after walk expr
+.   AS tc(1) # fib.go:14:18
+.   .   NAME-fib.~r0 esc(no) Class:PAUTO Offset:0 InlFormal OnStack SLICE-[]int tc(1) # fib.go:14:18 fib.go:3:23
+.   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used SLICE-[]int tc(1) # fib.go:14:18 fib.go:4:2
+after walk expr
+.   BLOCK # fib.go:14:18
+.   BLOCK-List
+.   .   AS tc(1) # fib.go:14:18
+.   .   .   NAME-fib.~r0 esc(no) Class:PAUTO Offset:0 InlFormal OnStack SLICE-[]int tc(1) # fib.go:14:18 fib.go:3:23
+.   .   .   NAME-fib.fib esc(no) Class:PAUTO Offset:0 InlLocal OnStack Used SLICE-[]int tc(1) # fib.go:14:18 fib.go:4:2
+after walk expr
+.   NAME-fib.seq esc(no) Class:PAUTO Offset:0 OnStack Used SLICE-[]int tc(1) # fib.go:14:2
+after walk expr
+.   NAME-fib.~r0 esc(no) Class:PAUTO Offset:0 InlFormal OnStack SLICE-[]int tc(1) # fib.go:14:18 fib.go:3:23
+after walk expr
+.   AS Def tc(1) # fib.go:14:6
+.   .   NAME-fib.seq esc(no) Class:PAUTO Offset:0 OnStack Used SLICE-[]int tc(1) # fib.go:14:2
+.   .   NAME-fib.~r0 esc(no) Class:PAUTO Offset:0 InlFormal OnStack SLICE-[]int tc(1) # fib.go:14:18 fib.go:3:23
+after walk expr
+.   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:15:6
+after walk expr
+.   AS Def tc(1) # fib.go:15:8
+.   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:15:6
+.   .   LITERAL-0 int tc(1) # fib.go:15:11
+after walk expr
+.   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:15:6
+after walk expr
+.   NAME-fib.n esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:13:2
+after walk expr
+.   LT bool tc(1) # fib.go:15:16
+.   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:15:6
+.   .   NAME-fib.n esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:13:2
+after walk expr
+.   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:15:6
+after walk expr
+.   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:15:6
+after walk expr
+.   LITERAL-1 int tc(1) # fib.go:15:22
+after walk expr
+.   ADD int tc(1) # fib.go:15:22
+.   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:15:6
+.   .   LITERAL-1 int tc(1) # fib.go:15:22
+after walk expr
+.   AS tc(1) # fib.go:15:22
+.   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:15:6
+.   .   ADD int tc(1) # fib.go:15:22
+.   .   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:15:6
+.   .   .   LITERAL-1 int tc(1) # fib.go:15:22
+after walk expr
+.   NAME-fib..autotmp_7 esc(N) Class:PAUTO Offset:0 AutoTemp OnStack Used int tc(1) # fib.go:16:10
+after walk expr
+.   NAME-fib.seq esc(no) Class:PAUTO Offset:0 OnStack Used SLICE-[]int tc(1) # fib.go:14:2
+after walk expr
+.   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:15:6
+after walk expr
+.   INDEX int tc(1) # fib.go:16:14
+.   .   NAME-fib.seq esc(no) Class:PAUTO Offset:0 OnStack Used SLICE-[]int tc(1) # fib.go:14:2
+.   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:15:6
+after walk expr
+.   AS tc(1) # fib.go:16:10
+.   .   NAME-fib..autotmp_7 esc(N) Class:PAUTO Offset:0 AutoTemp OnStack Used int tc(1) # fib.go:16:10
+.   .   INDEX int tc(1) # fib.go:16:14
+.   .   .   NAME-fib.seq esc(no) Class:PAUTO Offset:0 OnStack Used SLICE-[]int tc(1) # fib.go:14:2
+.   .   .   NAME-fib.i esc(no) Class:PAUTO Offset:0 OnStack Used int tc(1) # fib.go:15:6
+after walk expr
+.   NAME-fib..autotmp_7 esc(N) Class:PAUTO Offset:0 AutoTemp OnStack Used int tc(1) # fib.go:16:10
+after walk expr
+.   NAME-runtime.printlock Class:PFUNC Offset:0 Used FUNC-func() tc(1)
+after walk expr
+.   CALLFUNC Walked tc(1) # fib.go:16:10
+.   CALLFUNC-Fun
+.   .   NAME-runtime.printlock Class:PFUNC Offset:0 Used FUNC-func() tc(1)
+after walk expr
+.   NAME-runtime.printunlock Class:PFUNC Offset:0 Used FUNC-func() tc(1)
+after walk expr
+.   CALLFUNC Walked tc(1) # fib.go:16:10
+.   CALLFUNC-Fun
+.   .   NAME-runtime.printunlock Class:PFUNC Offset:0 Used FUNC-func() tc(1)
+after walk expr
+.   CALLFUNC Walked tc(1) # fib.go:16:10
+.   CALLFUNC-Fun
+.   .   NAME-runtime.printlock Class:PFUNC Offset:0 Used FUNC-func() tc(1)
+after walk expr
+.   NAME-runtime.printint Class:PFUNC Offset:0 Used FUNC-func(int64) tc(1)
+after walk expr
+.   NAME-fib..autotmp_7 esc(N) Class:PAUTO Offset:0 AutoTemp OnStack Used int tc(1) # fib.go:16:10
+after walk expr
+.   CONVNOP int64 tc(1) # fib.go:16:10
+.   .   NAME-fib..autotmp_7 esc(N) Class:PAUTO Offset:0 AutoTemp OnStack Used int tc(1) # fib.go:16:10
+after walk expr
+.   CALLFUNC Walked tc(1) # fib.go:16:10
+.   CALLFUNC-Fun
+.   .   NAME-runtime.printint Class:PFUNC Offset:0 Used FUNC-func(int64) tc(1)
+.   CALLFUNC-Args
+.   .   CONVNOP int64 tc(1) # fib.go:16:10
+.   .   .   NAME-fib..autotmp_7 esc(N) Class:PAUTO Offset:0 AutoTemp OnStack Used int tc(1) # fib.go:16:10
+after walk expr
+.   NAME-runtime.printnl Class:PFUNC Offset:0 Used FUNC-func() tc(1)
+after walk expr
+.   CALLFUNC Walked tc(1) # fib.go:16:10
+.   CALLFUNC-Fun
+.   .   NAME-runtime.printnl Class:PFUNC Offset:0 Used FUNC-func() tc(1)
+after walk expr
+.   CALLFUNC Walked tc(1) # fib.go:16:10
+.   CALLFUNC-Fun
+.   .   NAME-runtime.printunlock Class:PFUNC Offset:0 Used FUNC-func() tc(1)
+after walk expr
+.   CALLFUNC Walked tc(1) # fib.go:16:10
+.   CALLFUNC-Fun
+.   .   NAME-runtime.printlock Class:PFUNC Offset:0 Used FUNC-func() tc(1)
+after walk expr
+.   CALLFUNC Walked tc(1) # fib.go:16:10
+.   CALLFUNC-Fun
+.   .   NAME-runtime.printint Class:PFUNC Offset:0 Used FUNC-func(int64) tc(1)
+.   CALLFUNC-Args
+.   .   CONVNOP int64 tc(1) # fib.go:16:10
+.   .   .   NAME-fib..autotmp_7 esc(N) Class:PAUTO Offset:0 AutoTemp OnStack Used int tc(1) # fib.go:16:10
+after walk expr
+.   CALLFUNC Walked tc(1) # fib.go:16:10
+.   CALLFUNC-Fun
+.   .   NAME-runtime.printnl Class:PFUNC Offset:0 Used FUNC-func() tc(1)
+after walk expr
+.   CALLFUNC Walked tc(1) # fib.go:16:10
+.   CALLFUNC-Fun
+.   .   NAME-runtime.printunlock Class:PFUNC Offset:0 Used FUNC-func() tc(1)
+after walk expr
+.   BLOCK tc(1) # fib.go:16:10
+.   BLOCK-List
+.   .   CALLFUNC Walked tc(1) # fib.go:16:10
+.   .   CALLFUNC-Fun
+.   .   .   NAME-runtime.printlock Class:PFUNC Offset:0 Used FUNC-func() tc(1)
+.   .   CALLFUNC Walked tc(1) # fib.go:16:10
+.   .   CALLFUNC-Fun
+.   .   .   NAME-runtime.printint Class:PFUNC Offset:0 Used FUNC-func(int64) tc(1)
+.   .   CALLFUNC-Args
+.   .   .   CONVNOP int64 tc(1) # fib.go:16:10
+.   .   .   .   NAME-fib..autotmp_7 esc(N) Class:PAUTO Offset:0 AutoTemp OnStack Used int tc(1) # fib.go:16:10
+.   .   CALLFUNC Walked tc(1) # fib.go:16:10
+.   .   CALLFUNC-Fun
+.   .   .   NAME-runtime.printnl Class:PFUNC Offset:0 Used FUNC-func() tc(1)
+.   .   CALLFUNC Walked tc(1) # fib.go:16:10
+.   .   CALLFUNC-Fun
+.   .   .   NAME-runtime.printunlock Class:PFUNC Offset:0 Used FUNC-func() tc(1)

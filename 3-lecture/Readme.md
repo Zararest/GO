@@ -17,3 +17,7 @@ type _YAMLStructure struct {
 ```go
 json.Marshal(person)
 ```
+- Imports are related to modules, not the directories:
+```go
+*module-name*/path/to/dir
+```
