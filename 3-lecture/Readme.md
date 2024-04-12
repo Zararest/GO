@@ -21,3 +21,4 @@ json.Marshal(person)
 ```go
 *module-name*/path/to/dir
 ```
+- You can redefinne unmarshal for xmlCurrency 

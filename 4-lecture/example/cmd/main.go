@@ -8,6 +8,10 @@ import (
 	"strconv"
 )
 
+func foo() {
+	panicVar = false
+}
+
 var panicVar = true
 
 type Student struct {
@@ -25,13 +29,14 @@ func calculateAverage(grades []int) float64 {
 }
 
 func main() {
-	fib.FibMain()
 
 	if panicVar {
 		panic("AAAA")
 	} else {
 		fmt.Println("Everything is fine")
 	}
+
+	fib.FibMain()
 
 	// Open the input CSV file
 	inputFile, err := os.Open("grades.csv")
