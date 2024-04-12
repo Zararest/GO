@@ -1,15 +1,21 @@
 package queue
 
 import (
+	"errors"
 	"sync/atomic"
 	"unsafe"
 )
 
 // The only way to use atomic.CAS is to use unsafe pointers
 type Queue[T any] struct {
-	Head unsafe.Pointer
-	Tail unsafe.Pointer
+	Head unsafe.Pointer // pop from here
+	Tail unsafe.Pointer // push here
 }
+
+/*
+  head.next -> node.next -> tail.next -> nil
+	head is always a dummy element
+*/
 
 type Node[T any] struct {
 	Value T
@@ -22,7 +28,7 @@ func Create[T any]() Queue[T] {
 	return Queue[T]{dummyElem, dummyElem}
 }
 
-func (queue Queue[T]) Push(value T) {
+func (queue *Queue[T]) Push(value T) {
 	node := Node[T]{Value: value, Next: nil}
 	for {
 		// trying to get tail and its next element
@@ -40,6 +46,50 @@ func (queue Queue[T]) Push(value T) {
 				atomic.CompareAndSwapPointer(&queue.Tail, tail, unsafe.Pointer(&node))
 				return
 			}
-		} // probably needs else
+		} else {
+			// if we detect that we have a tail node that is not in queue, we add it
+			// (this needs because pop instruction can make previous CAS fail)
+			atomic.CompareAndSwapPointer(&queue.Tail, tail, next)
+		}
 	}
+}
+
+func defaultValue[T any]() T {
+	var val T
+	return val
+}
+
+// FIXME: How to return generic default value???!!???
+func (queue *Queue[T]) Pop() (T, error) {
+	for {
+		// trying to get head, tail and its next element
+		tail := atomic.LoadPointer(&queue.Tail)
+		head := atomic.LoadPointer(&queue.Head)
+		next := atomic.LoadPointer(&(*Node[T])(head).Next)
+		if head == tail {
+			if next == nil {
+				return defaultValue[T](), errors.New("queue is empty")
+			}
+			// if head == tail, probably other thread hasn't made second CAS
+			atomic.CompareAndSwapPointer(&queue.Tail, tail, next)
+		} else {
+			// because head is a dummy
+			value := (*Node[T])(next).Value
+			// if we still owns a head we returns adds new head
+			if atomic.CompareAndSwapPointer(&queue.Head, head, next) {
+				return value, nil
+			}
+		}
+	}
+}
+
+func (queue Queue[T]) Len() int {
+	nextPtr := queue.Head
+	next := (*Node[T])(nextPtr)
+	len := 0
+	for next != nil {
+		len++
+		next = (*Node[T])(next.Next)
+	}
+	return len
 }
