@@ -63,8 +63,12 @@ func defaultValue[T any]() T {
 func (queue *Queue[T]) Pop() (T, error) {
 	for {
 		// trying to get head, tail and its next element
-		tail := atomic.LoadPointer(&queue.Tail)
+		// WOW: if I change places of head and tail, algorithm won't work
+		// 	since compiler isn't allowed to reorder atomic instructions,
+		// 	we should firstly capture head, because we firstly check if head == tail
+		//	and after changed head
 		head := atomic.LoadPointer(&queue.Head)
+		tail := atomic.LoadPointer(&queue.Tail)
 		next := atomic.LoadPointer(&(*Node[T])(head).Next)
 		if head == tail {
 			if next == nil {
@@ -75,7 +79,7 @@ func (queue *Queue[T]) Pop() (T, error) {
 		} else {
 			// because head is a dummy
 			value := (*Node[T])(next).Value
-			// if we still owns a head we returns adds new head
+			// if we still own a head, we return adds new head
 			if atomic.CompareAndSwapPointer(&queue.Head, head, next) {
 				return value, nil
 			}

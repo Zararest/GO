@@ -2,20 +2,18 @@ package main
 
 import (
 	"flag"
-	//"os"
 	"sort"
-	//"time"
 
 	"lock-free-queue/pkg/queue"
 )
 
-func produce[T any](q queue.Queue[T], data chan T) {
+func produce[T any](q *queue.Queue[T], data chan T) {
 	for val := range data {
 		q.Push(val)
 	}
 }
 
-func consume[T any](q queue.Queue[T], out chan T) {
+func consume[T any](q *queue.Queue[T], out chan T) {
 	for {
 		val, err := q.Pop()
 		if err != nil {
@@ -42,6 +40,9 @@ func checkResults(out chan int, data []int) {
 
 	sort.Ints(outData)
 	if !cmp(outData, data) {
+		/*for i, data := range outData {
+			fmt.Printf("%d: %d\n", i, data)
+		}*/
 		panic("invalid output array")
 	}
 }
@@ -94,10 +95,10 @@ func main() {
 	outChan := make(chan int, numOfElements)
 	for i := 0; i < max(numOfProducers, numOfConsumers); i++ {
 		if i < numOfProducers {
-			go produce(intQueue, inputChan)
+			go produce(&intQueue, inputChan)
 		}
 		if i < numOfConsumers {
-			go consume(intQueue, outChan)
+			go consume(&intQueue, outChan)
 		}
 	}
 
