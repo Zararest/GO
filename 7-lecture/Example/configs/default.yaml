@@ -1,0 +1,4 @@
+server:
+  host: ":8080"
+file:
+  base-path: "bin/tmp/data/"

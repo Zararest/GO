@@ -88,6 +88,7 @@ func main() {
 	sort.Ints(inputData)
 
 	inputChan := make(chan int, numOfElements)
+
 	for _, data := range inputData {
 		inputChan <- data
 	}

@@ -1,0 +1,61 @@
+basePath: /
+host: localhost:8080
+info:
+  contact:
+    email: andrianovartemii@gmail.com
+  description: Service for store files in base dir
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  title: Static File Storage Service (SFSS)
+  version: "1.0"
+paths:
+  /delete:
+    delete:
+      parameters:
+      - description: file name
+        in: query
+        name: name
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+        "404":
+          description: Not Found
+          schema:
+            type: string
+      summary: removes file from base dir by url query param.
+      tags:
+      - write
+  /get/{name}:
+    get:
+      parameters:
+      - description: file name
+        in: path
+        name: name
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "408":
+          description: Request Timeout
+          schema:
+            type: string
+      summary: eturns file by name from mux.Vars.
+      tags:
+      - read
+  /ping:
+    get:
+      responses:
+        "200":
+          description: OK
+      summary: assign ping returns pong (health).
+      tags:
+      - healt
+swagger: "2.0"

@@ -67,8 +67,10 @@ func (queue *Queue[T]) Pop() (T, error) {
 		// 	since compiler isn't allowed to reorder atomic instructions,
 		// 	we should firstly capture head, because we firstly check if head == tail
 		//	and after changed head
-		head := atomic.LoadPointer(&queue.Head)
-		tail := atomic.LoadPointer(&queue.Tail)
+		/*head := atomic.LoadPointer(&queue.Head)
+		tail := atomic.LoadPointer(&queue.Tail)*/
+		head := queue.Head
+		tail := queue.Tail
 		next := atomic.LoadPointer(&(*Node[T])(head).Next)
 		if head == tail {
 			if next == nil {
