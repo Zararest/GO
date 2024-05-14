@@ -16,10 +16,10 @@ func main() {
 	cfg, err := config.GetParameters()
 	handleError(err)
 
-	log, err = logger.Create(cfg.log)
+	log, err := logger.Create(cfg.Log)
 	handleError(err)
 
-	app, err = server.Create(cfg.server, &log)
+	app, err := server.Create(cfg.Server, &log)
 	handleError(err)
 
 	app.Run()

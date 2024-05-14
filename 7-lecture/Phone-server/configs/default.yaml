@@ -1,0 +1,6 @@
+logger:
+  level: 1
+server:
+  host: ":8080"
+storage:
+  path: "/tmp"

@@ -60,3 +60,6 @@ func main() {
 }
 ```
 
+## Note
+Function can return `nil` if return value is a pointer or an interface!!!
+
